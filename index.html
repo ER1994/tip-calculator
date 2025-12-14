@@ -5,34 +5,35 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="./images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <title>Tip calculator app</title>
+    <script src = 'calculations.js' defer></script>
 </head>
 <body>
-<form>
+<form id="calculations-forms">
     <div class="input-section">
         <fieldset>
             <label for="bill">Bill</label>
-            <input id="bill" name="bill" type="number">
+            <input id="bill" name="bill" type="number" placeholder="0" step="0.01">
         </fieldset>
         <fieldset>
             <legend>Select Tip %</legend>
-            <button type="button">5%</button>
-            <button type="button">10%</button>
-            <button type="button">15%</button>
-            <button type="button">25%</button>
-            <button type="button">50%</button>
-            <input type="text" name="custom" id="custom">
+            <button type="button" class="tip-btn" data-rate = '0.05'>5%</button>
+            <button type="button" class="tip-btn" data-rate = '0.1'>10%</button>
+            <button type="button" class="tip-btn" data-rate = '0.15'>15%</button>
+            <button type="button" class="tip-btn" data-rate = '0.25'>25%</button>
+            <button type="button" class="tip-btn" data-rate = '0.5'>50%</button>
+            <input type="number" name="custom" id="custom" class="tip-input" placeholder="Custom">
         </fieldset>
         <fieldset>
-            <label>Number of People</label>
-            <input id="people" name="people" type="number">
+            <label for="people">Number of People</label>
+            <input id="people" name="people" type="number" step="1" placeholder="0">
         </fieldset>
     </div>
     <div class="output-section">
         <fieldset>
-            <label>Tip Amount / person</label>
-            <output name="result-tip"></output>
-            <label>Total / person</label>
-            <output name="result-total"></output>
+            <label for="result-tip">Tip Amount / person</label>
+            <output id="result-tip"  name="result-tip"></output>
+            <label for="result-total">Total / person</label>
+            <output id="result-total" name="result-total"></output>
             <button type="reset">Reset</button>
         </fieldset>
     </div>
