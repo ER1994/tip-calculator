@@ -4,39 +4,38 @@ const billAmount = document.getElementById('bill')
 const people = document.getElementById('people')
 
 const validations = {
-    bill: (value) => value !== 0,
-    people: (value) => value !== 0
+    bill: (value) => value !== '0',
+    people: (value) => value !== '0'
 }
 
-function dataIsValid (key,value, validations) {
-    if (!validations[key]) return true
-
-    return validations[key](value)
+function dataIsValid(name, value, validations) {
+    if (!validations[name]) return true
+    return validations[name](value)
 }
 
-function isValidForm(form,validations) {
+function isValidForm(form, validations) {
     let isValid = true
-    const data = Object.fromEntries(new FormData(form))
-    Object.keys(data).forEach((name) => {
-        if (!dataIsValid(name,data[name],validations)) {
+    const inputs = form.querySelectorAll('.validation')
+    inputs.forEach(input => {
+        if (!dataIsValid(input.name, input.value, validations)) {
             isValid = false
         }
     })
     return isValid
 }
 
-function updateTipPerson (amount) {
+function updateTipPerson(amount) {
     const totalTip = document.getElementById('result-tip')
-    totalTip.value = amount
+    totalTip.value = parseFloat(amount.toFixed(2))
 }
 
-function updateTotalPerson (amount) {
+function updateTotalPerson(amount) {
     const total = document.getElementById('result-total')
-    total.value = amount
+    total.value = parseFloat(amount.toFixed(2))
 }
 
-function calculateTotals (form, rate) {
-    if (isValidForm(form,validations)) {
+function calculateTotals(form, rate) {
+    if (isValidForm(form, validations)) {
         let tipTotalPerson = (billAmount.value * rate) / people.value
         updateTipPerson(tipTotalPerson)
         let totalPerson = (billAmount.value * (1 + rate)) / people.value
@@ -46,7 +45,7 @@ function calculateTotals (form, rate) {
     }
 }
 
-function tipFormHandler (target, form) {
+function tipFormHandler(target, form) {
     const formEvent = document.getElementById('calculations-forms')
     let rate = form === 'button' ? parseFloat(target.dataset.rate) : parseFloat(target.value) / 100
     calculateTotals(formEvent, rate)
@@ -60,11 +59,11 @@ people.addEventListener('keypress', (e) => {
 
 billAmount.addEventListener('change', (e) => {
     let value = parseFloat(e.target.value)
-    e.target.value = parseFloat(value.toFixed(2))
+    e.target.value = +value > 0 ? parseFloat(value.toFixed(2)) : 0
 })
 
 tipBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => tipFormHandler(e.target,'button'))
+    btn.addEventListener('click', (e) => tipFormHandler(e.target, 'button'))
 
 })
 
