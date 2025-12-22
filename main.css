@@ -1,0 +1,213 @@
+body {
+    min-height: 100dvh;
+    background-color: var(--grey-200);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 41px;
+}
+
+#calculations-forms {
+    background-color: var(--white);
+    border-radius: 25px;
+    padding: var(--spacing-400) var(--spacing-300);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+}
+
+label, legend {
+    color: var(--grey-500);
+    font: var(--bold) var(--text-preset1-regular)/var(--line-height-regular) var(--font-family);
+    letter-spacing: var(--letter-spacing-regular);
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+}
+
+.tip-section {
+    display: flex;
+    gap: var(--spacing-100);
+}
+
+.tip-rates {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-row-gap: var(--spacing-200);
+    grid-column-gap: var(--spacing-200);
+}
+
+.tip-btn, .tip-input {
+    border: none;
+    border-radius: 5px;
+    color: var(--white);
+    background-color: var(--green-900);
+    font: var(--bold) var(--spacing-300) / var(--line-height-large) var(--font-family);
+}
+
+.tip-input {
+    background-color: var(--grey-50);
+    color: var(--grey-550);
+    text-align: center;
+}
+
+
+.validation {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--grey-50);
+    padding: var(--spacing-100);
+    font: var(--bold) var(--text-preset1-large)/var(--line-height-large) var(--font-family);
+    letter-spacing: var(--letter-spacing-regular);
+    color: var(--grey-300);
+}
+
+#bill {
+    background-image: url('images/icon-dollar.svg');
+    background-repeat: no-repeat;
+    background-position: var(--spacing-200) center;
+    text-align: right;
+    padding: var(--spacing-100) var(--spacing-200);
+}
+
+#people {
+    background-image: url('images/icon-person.svg');
+    background-repeat: no-repeat;
+    padding: var(--spacing-100) var(--spacing-200);
+    background-position: var(--spacing-200) center;
+    text-align: right;
+}
+
+.people-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.output-section {
+    background-color: var(--green-900);
+    border-radius: 15px;
+    padding: var(--spacing-300);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+}
+
+.output-section fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.output-section label {
+    color: var(--white);
+}
+
+.sub {
+    font: var(--bold) var(--text-preset1-small) / var(--line-height-small) var(--font-family);
+    color: var(--grey-400);
+}
+
+#result-tip, #result-total {
+    color: var(--green-400);
+    font: var(--bold) var(--text-preset1-xl)/ var(--line-height-xl) var(--font-family);
+}
+
+.reset {
+    background-color: var(--green-750);
+    border: none;
+    border-radius: 5px;
+    padding: var(--spacing-100);
+    color: var(--green-800);
+    font: var(--bold) 20px / var(--line-height-medium) var(--font-family);
+}
+
+/*STATE CLASSES*/
+.tip-btn:active {
+    background-color: var(--green-200);
+    color: var(--green-900);
+}
+
+.reset:active {
+    background-color: var(--green-200);
+    color: var(--green-900);
+}
+
+.btn--selected {
+    background-color: var(--green-400);
+    color: var(--green-900);
+}
+
+.input--valid {
+    border: 2px solid var(--green-400);
+    color: var(--green-900);
+}
+
+.input--invalid {
+    border: 2px solid var(--orange-400);
+}
+
+.error-message__inactive {
+    display: none;
+}
+
+.error-message__active {
+    display: block;
+    color: var(--orange-400);
+    font: var(--bold) var(--text-preset1-regular) / var(--line-height-regular) var(--font-family);
+    margin: 0;
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+    #calculations-forms {
+        box-sizing: border-box;
+        min-width: 608px;
+        padding: var(--spacing-500) var(--spacing-1000);
+        gap: var(--spacing-500);
+    }
+
+    .output-section{
+        padding: var(--spacing-300) var(--spacing-400);
+    }
+
+    #result-tip, #result-total {
+        font: var(--bold) var(--text-preset1-xxl)/ var(--line-height-xxl) var(--font-family);
+    }
+}
+
+@media (min-width: 1440px) {
+    body {
+        gap: 88px;
+    }
+
+    #calculations-forms {
+        min-width: 920px;
+        padding: var(--spacing-400);
+        flex-direction: row;
+    }
+
+    .input-section {
+        flex: 1;
+    }
+
+    .output-section{
+        flex: 1;
+        justify-content: space-between;
+    }
+
+    .reset {
+        margin-bottom: var(--spacing-200);
+    }
+}

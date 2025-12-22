@@ -1,0 +1,58 @@
+:root {
+    /*COLORS*/
+    --white: hsl(0, 100%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --grey-600: hsl(180, 25%, 32%);
+    --grey-550: hsl(180, 18%, 40%);
+    --grey-500: hsl(186, 14%, 43%);
+    --grey-400: hsl(184, 14%, 56%);
+    --grey-300: hsl(184, 19%, 68%);
+    --grey-200: hsl(185, 41%, 84%);
+    --grey-50: hsl(189, 47%, 97%);
+    --green-900: hsl(183, 100%, 15%);
+    --green-800: hsl(183, 85%, 21%);
+    --green-750: hsl(183, 79%, 24%);
+    --green-400: hsl(172, 67%, 45%);
+    --green-200: hsl(173, 61%, 77%);
+    --orange-400: hsl(13, 70%, 60%);
+
+    /*TYPOGRAPHY*/
+    /*Size*/
+    --text-preset1-xxl: 47px;
+    --text-preset1-xl: 32px;
+    --text-preset1-large: 24px;
+    --text-preset1-medium: 20px;
+    --text-preset1-regular: 16px;
+    --text-preset1-small: 13px;
+
+    /*Line height*/
+    --line-height-xxl: 71px;
+    --line-height-xl: 47px;
+    --line-height-large: 36px;
+    --line-height-medium: 30px;
+    --line-height-regular: 24px;
+    --line-height-small: 19px;
+
+    /*Letter spacing*/
+    --letter-spacing-regular: 0px;
+    --letter-spacing-small: -0.67px;
+    --letter-spacing-smalest: -1px;
+
+    /*Font family*/
+    --font-family: 'Space Mono', monospace;
+
+    /*Font weight*/
+    --bold: 700;
+
+    /*SPACING*/
+    --spacing-0: 0px;
+    --spacing-100: 8px;
+    --spacing-200: 16px;
+    --spacing-300: 24px;
+    --spacing-400: 32px;
+    --spacing-500: 48px;
+    --spacing-1000: 80px;
+    --spacing-1200: 96px;
+    --spacing-1500: 120px;
+    --spacing-1600: 128px;
+}
